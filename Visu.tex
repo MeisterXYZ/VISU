@@ -1,0 +1,230 @@
+\documentclass{article}
+
+\title{\vspace{-5mm}%
+	\fontsize{24pt}{10pt}\selectfont
+	\textbf{VISU- Zusammenfassung}
+}	
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\maketitle	
+\pagebreak
+\section{Aufgaben der Visualisierung}
+Begriffsdefinition: Drei Zitate zu Visualisierung\\
+Aufgaben der Visualisierung Zusammenfassung\\
+Aufgaben der Visualisierung I - III\\
+Schritte Idealisiertes Vorgehen\\
+Ein Wort zu VTK
+\pagebreak
+
+\section{Datenformate und Gittermodelle}
+\subsection{Eigenschaften von Daten und Datensätzen - Was bilden wir ab?} 
+\textbf{Aufbau Datensatz}\\
+
+\begin{itemize}[noitemsep]
+	\item Definitionsmenge
+	\item Topologie
+	\item Funktion $Definitionsmenge \rightarrow Bildmenge$ wobei Bildmenge Attributen der Daten gleichen muss.
+\end{itemize}
+
+
+\noindent \textbf{5 Kriterien von Datensätzen:}
+\begin{itemize}[noitemsep]
+	\item ....
+\end{itemize}
+
+\noindent Typen von Daten:
+\begin{itemize}[noitemsep]
+	\item ....
+\end{itemize}
+Nominal bis Kontinuierlich
+\begin{itemize}[noitemsep]
+	\item ....
+\end{itemize}
+
+\noindent \textbf{Anforderungen ans Visualisierungssystem}
+\begin{itemize}[noitemsep]
+	\item effiziente Daten-Speicherung
+	\item effizienter Datenzugriff
+	\item Abbildbarkeit (?)
+	\item Einfachheit (?)
+\end{itemize}
+
+\noindent \textbf{Begriffsdefinitionen}\\
+\begin{itemize}[noitemsep]
+	\item Stetigkeit (Kurz in Umgangssprache aufschreiben)
+	\item Topolgie, Kodimension...
+\end{itemize}
+
+\noindent \textbf{Das Problem, dass alles was gemessen wird, diskrete Werte sind}\\
+Infos auf Folie?\\
+Wie man zwischen Werten interpoliert.\\
+
+
+\noindent Shepard Interpolation\\
+
+\noindent Modifizierte Shepard Interpolation\\
+$\rightarrow$ Mit Radius
+
+\subsection{Interpolation generell - Alles im Zwischenraum visualisieren können }
+Zwischen welchen Werten man interpoliert.\\
+
+\noindent \textbf{Auf der Linie}\\
+
+\noindent \textbf{Im linearen Dreieck}\\
+
+\noindent \textbf{Dreieck mit Baryzentrischen Koordinaten}\\
+
+\noindent \textbf{Im linearen Tetraeder}\\
+- mit Baryzentrischen Koordinaten\\
+- mit linearem Ansatz\\
+
+\noindent \textbf{Im bilinearen Rechteck}\\
+- Entlang der Kanten linear\\
+- Innerhalb des Rechtecks Bi-Linear\\
+
+\noindent \textbf{Im linearen Quader}\\
+
+\noindent \textbf{Im linearen Prisma}\\
+
+\noindent \textbf{Neares Neighbour in Voroni-Diagrammen für Scattered Data}\\
+
+\subsection{Gitter - den gesamten Raum visualisieren können}
+\noindent \textbf{Was ist ein Gitter?}\\
+- Bisher Set an Interpolations-Möglichkeiten\\
+- Jetzt ganzen Raum mit Gitter auskleiden - befähigt uns jeden Punkt im Raum abzubilden.\\
+
+\noindent \textbf{Welche Gitter gibt es?}\\
+
+\noindent \textbf{Wie speichert man die Dinger?}\\
+- Feste X und Y Delta\\
+- Suchstrukturen nennen können. (R-Baum, weitere..)
+\pagebreak
+
+\section{Skalare und Skalarfelder}
+
+\subsection{Definifion Feld und Skalarfeld}
+Feld: ...\\
+Skalarfeld...
+
+\subsection{Darstellungsformen von 2D-Definitionsmenge}
+\begin{itemize}[noitemsep]
+	\item Einfärbung
+	\item Höhenfelder
+	\item Isolinien
+\end{itemize}
+
+\subsection{Darstellungsformen von 3D-Definitionsmenge}
+\begin{itemize}[noitemsep]
+	\item Schnittflächen mit Einfärbung: Volumen mit einer Ebene schneiden, dann Punkten Farbwert zuordnen.
+	\item Jedem Skalar im Volumen optische Eigenschaft zuweisen und auf Projektionsfläche abbilden (Absorptions-, Emissions-Modell, ect.)
+	\item Isoflächen (Zeige alle Punkte mit Isowert a an)
+\end{itemize}
+
+\subsection{Color-Maps}
+Aspekte raussuchen.
+
+\subsection{Isolinien und Flächen}
+- Was sind das?\\
+- Interpolation von Isowert in Dreiecks-Flächen (Wo schneidet ein Dreieck die 0-Höhenlinie?)\\
+- Interpolation von Isowert in Vierecks-Flächen\\
+- Interpolation von Isowert in Polygone -> In Drei-oder Vierecke zerlegen, dann weiter\\
+
+\subsection{Isolinien und Flächen im Raum: Marching Cubes}
+- Prinzip\\
+- Bug im Verfahren (Bei Verbindung über mehrere Zellen)\\
+- Korrekte Triangulierung\\ 
+- Konsistente Triangulierung -> Über Festlegung: Bei Sattelpunkt: Liegt immer nach Links - ist Konsitenz sichergestellt.
+
+\subsection{Asymptotic Decider}
+- Bilineare Interoplation (an den Flächen entlang?\\
+- Fallunterscheidung: Wert von Interpoliertem Kanten-Schnittpunkt vergleichen mit Sattelpunkt-Wert.
+- Probleme: Korrketheit der Triangulierung -> Analog zu Marching Cubes, allerdings ist schon Konsitenz sichergestellt - Korrektheit bleibt offen.\\
+
+\pagebreak
+\section{Volumenvisualisierung}
+Aus Kap 2:
+\begin{itemize}[noitemsep]
+	\item Schnittflächen mit Einfärbung: Volumen mit einer Ebene schneiden, dann Punkten Farbwert zuordnen.
+	\item Jedem Skalar im Volumen optische Eigenschaft zuweisen und auf Projektionsfläche abbilden (Absorptions-, Emissions-Modell, ect.)
+	\item Isoflächen (Zeige alle Punkte mit Isowert a an)
+\end{itemize}
+
+
+\subsection{Welche 3D-Volumen-Daten gibt es zu visualisieren?}
+
+
+\subsection{Schnittflächen}
+- Ebne = Position und Normalenvektor\\
+- MC-Verfahren\\
+
+\noindent Alternativ: 
+- Schnitt entlang einer gekrümmten Ebene (z.B. Vene verfolgen) = Curved Planar Reformation, CPR\\
+
+\noindent Dabei Generell:\\
+- Thresholding einsetzbar\\
+- Regionenwachstum mit Saatpunkt
+
+
+\subsection{Durchleuchtung}
+Verfahren Beschreiben\\
+- ...\\
+- Dabei maßgebend Houndsfield-Skala\\
+
+\noindent Emissionsmodell\\
+
+\noindent Absorptionsmodell\\
+
+\noindent Kombination beider Modelle\\
+
+\noindent Absorptionsmodell\\
+
+\noindent Darstellung des resultierenden Skalarfeldes\\
+- Mensch schlechte Tiefenwahrnehmung, auf Wahrnehmen von Obeflächen trainiert $^\rightarrow$ deswegen Einsatz Transferfunktion
+
+\subsection{Beleuchtung von Oberflächen}
+Notwendig, um 3D sichtbar zu machen.\\
+
+\subsection{Transferfunktionen}
+- Color Maps\\
+- Color, oppacity (Zahn-Bsp. von Durchleuchtung)\\
+- Gradientenberechnung für deutlichere Übergänge -> Baumstamm / Luft vs Blatt vs Luft
+
+\subsection{Sampling-Methoden: Arten der Strahlenverfolgung}
+...
+
+
+\subsection{Methoden nach dem Motto ''Wir machen was anderes als die Physik''}
+...
+
+\pagebreak
+\section{Skalarfeldtopologie}
+
+\pagebreak
+\section{Merkmalskurven}
+- Stromlinien, Pfadlinien\\
+- Runge Kutte Verfahren
+
+\pagebreak
+\section{Vektorfelder}
+
+\pagebreak
+\section{Texturbasierte Techniken}
+
+\pagebreak
+\section{Vektorfeld-Topologie}
+
+\pagebreak
+\section{Merkmalsbestimmung und Wirbelextraktion}
+
+
+\pagebreak
+\section{FRAGEN}
+- Bug im Verfahren zu MC (Bei Verbindung über mehrere Zellen) -- was ist der Fehler, wie kann man ihn beheben?\\
+- Korrekte Triangulierung = Fehlerbehebung unabh. von Echtwelt?\\ 
+- Konsistente Triangulierung = Echtwelt?\\
+- Regionenwachstum mit Saatpunkt in Schnittvisualiserung - BSP?\\
+
+
+\end{document}
