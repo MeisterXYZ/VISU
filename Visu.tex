@@ -192,14 +192,89 @@ Notwendig, um 3D sichtbar zu machen.\\
 - Gradientenberechnung für deutlichere Übergänge -> Baumstamm / Luft vs Blatt vs Luft
 
 \subsection{Sampling-Methoden: Arten der Strahlenverfolgung}
-...
+- Bei Strahlenverfolgung entlang der Achsen: Levoy: Farbwert von Voxel am Ende des Voxels = Farbwert zu beginn des voxels + Farvbe des Vooxels + Oppacität des Voxels
+- Nicht Entlang der Achsen: Interpolation notwedig
+Generell paar Parameter:
+- Abtastrate  (Größe des Gitters)\\
+--Richtlinie\\
+--Theorem aus Signalverarbeitung\\
+- Sampling entlang Objekt (Transfpormatio der Strahlen) oder Sampling einfach grade durch\\
+- Bessere Daten durch Vorverarbeitung\\
+- Abtastung mit Zufallswerten - Verschieben der regulären Abtastpunkte zufällig.\\
+
+Wie gehe ich mit den erhaltenen Punkten um?:
+
+\subsection{Prä- vs. Post-Klassifikation vs. Preintegrated Volume-Rendering}
+PräKlassifierung: Erst Eckpunkten Farbe zuweise, dann zwischen Farbwerten interpolieren. (Hier Gefahr des Color bleedings)\\
+Postklassifizierung: Erst zwischen Eckpunkten interpolieren, dann in Farbwert übersetzen.\\
+Preintegrated Coloring = Integral zwischen Abtastpunkten speichern = Berücksichtigung aller (interpolierten) Zwischenwerte  (kein Color bleeding) \\
 
 
-\subsection{Methoden nach dem Motto ''Wir machen was anderes als die Physik''}
-...
+\subsection{Non-photorealistic Rendering / abstraktes Rendering }
+= Methoden nach dem Motto ''Wir machen was anderes als die Physik'' \\
+Entspricht nicht Levoy-Ansatz. Begriff = Stilisierte künstlerisch abstraktes rendering. Für Darstellung des wesentlichen mit zerchnerischer Technik.\\
+
+\noindent \textbf{Silluette Rendering}\\
+Kanten des Objektes besoders hervor bei Knicken oder Materialgrenzen.\\
+
+\noindent \textbf{Tone Shading}\\
+Schattierung mit einer Farbe: Von nem runden Objekt werden die Vorder- und Rückseite damit klar. Damit kann man 3D geut wahrnehmen. Durch Wahrnehmungstheorie: Warmer ton vorne, kalter Farbton im Schatten.\\
+
+\noindent \textbf{Cartoon Shading}\\
+Farbverläufe in Bereiche gleicher Farben unterteilen - Diskretisieren.\\
+
+
+\subsection{Parallelität ausnutzbar}
+Parallelität ausnutzbar weil SIMD.\\
+Aufteilung der Daten via kd-Baum (k-Dimensionaler Baum) - halbieren, halbieren ... Baumstruktur. Werte an Rändern dann dublizieren (damit in beiden Teilbäumen mit den Daten gerechnet werden kann) und beim zusammenführen nur 1x werten.
+
 
 \pagebreak
 \section{Skalarfeldtopologie}
+
+\subsection{Definition Skalarfeldtopologie}
+- Rubber-Band Geometry\\
+- Homöomorphismus \\
+
+
+- Simplex = Einfache wir Punkt, Limnie Dreieck\\
+- Simplizialkomplex = Komplexe Struktur aufgebaut aus Sinmplexen\\
+- Triangulierung von nem topologischen Raum X ist ein Simplizialkomplex k zusammen mit nem Homöomirphismus k nach x (wir müssen sagen: Wo gehören die Dreicke hin? Homöomorphismus lässt uns die triangulierten Werde in den zugrundeliegenden echten Raum transformieren.)
+
+\subsection{Morsetheorie}
+- Wir haben ne Mannigfaltigkeit (Bspw. Erd-Kugel) darauf haben wir ne differenzierbare Funktion (die Bspw. Höhenfeld darstellt). Mithilfe der Morse-Theorie können wir diese Funktion analytisch untersuchen.
+
+Kritische Punkte und kritische Werte:\\
+-- Wenn totale Ableitung gleich 0\\
+-- Partielle Ableitung entsprechend auch\\
+- Kugel rollt nicht weg\\
+--Hoch\\
+--Tief\\
+--Sattel\\
+
+In Hesse-Matrix stehen alle Kombinationen aller partiellen Ableitungen bis 2. Grades drin.
+Für alle kritischen Punkte Hesse-Matrix aufstellen. Darüber Erkenntnis gewinnen, wie es um die Punkte drum rum aussieht (Wo geht's wie starkt hoch und runter?) Daraus können wir die Umgebung aufbauen.
+
+Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte liefern, deswegen Dreieck leicht ankippen (kleines Epsilon an Ecken addieren.)
+
+\subsection{Konturbaum}
+- Lokales MIN\\
+- Lokales MAX\\
+- Verbindungs und Trennpunkt\\
+
+- Äquivalente Isokonturen = Zwei Linien untereinander (auf verschiedener Höhe) zwischen denen kein MIN, MAX, Trenn/VerbindPunkt liegen.\\
+
+- Konturbaum Superecke und Superkante.\\
+
+- Vergrößertert Konturbaum (?)\\
+- Höhengraph (mit Werten)\\
+- Teilgrph\\
+- Spilt-tree und join-tree\\
+
+
+
+
+
 
 \pagebreak
 \section{Merkmalskurven}
@@ -225,6 +300,9 @@ Notwendig, um 3D sichtbar zu machen.\\
 - Korrekte Triangulierung = Fehlerbehebung unabh. von Echtwelt?\\ 
 - Konsistente Triangulierung = Echtwelt?\\
 - Regionenwachstum mit Saatpunkt in Schnittvisualiserung - BSP?\\
+- Was versteht man unter Resampling?\\
+- Texturbasiertes Rendering?\\
+- 
 
 
 \end{document}
