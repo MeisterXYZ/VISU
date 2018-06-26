@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}Aufgaben der Visualisierung}{3}
+\contentsline {section}{\numberline {2}Datenformate und Gittermodelle}{4}
+\contentsline {subsection}{\numberline {2.1}Eigenschaften von Daten und Datens\IeC {\"a}tzen - Was bilden wir ab?}{4}
+\contentsline {subsection}{\numberline {2.2}Interpolation generell - Alles im Zwischenraum visualisieren k\IeC {\"o}nnen }{5}
+\contentsline {subsection}{\numberline {2.3}Gitter - den gesamten Raum visualisieren k\IeC {\"o}nnen}{5}
+\contentsline {section}{\numberline {3}Skalare und Skalarfelder}{6}
+\contentsline {subsection}{\numberline {3.1}Definifion Feld und Skalarfeld}{6}
+\contentsline {subsection}{\numberline {3.2}Darstellungsformen von 2D-Definitionsmenge}{6}
+\contentsline {subsection}{\numberline {3.3}Darstellungsformen von 3D-Definitionsmenge}{6}
+\contentsline {subsection}{\numberline {3.4}Color-Maps}{6}
+\contentsline {subsection}{\numberline {3.5}Isolinien und Fl\IeC {\"a}chen}{6}
+\contentsline {subsection}{\numberline {3.6}Isolinien und Fl\IeC {\"a}chen im Raum: Marching Cubes}{6}
+\contentsline {subsection}{\numberline {3.7}Asymptotic Decider}{6}
+\contentsline {section}{\numberline {4}Volumenvisualisierung}{8}
+\contentsline {subsection}{\numberline {4.1}Welche 3D-Volumen-Daten gibt es zu visualisieren?}{8}
+\contentsline {subsection}{\numberline {4.2}Schnittfl\IeC {\"a}chen}{8}
+\contentsline {subsection}{\numberline {4.3}Durchleuchtung}{8}
+\contentsline {subsection}{\numberline {4.4}Beleuchtung von Oberfl\IeC {\"a}chen}{8}
+\contentsline {subsection}{\numberline {4.5}Transferfunktionen}{9}
+\contentsline {subsection}{\numberline {4.6}Sampling-Methoden: Arten der Strahlenverfolgung}{9}
+\contentsline {subsection}{\numberline {4.7}Pr\IeC {\"a}- vs. Post-Klassifikation vs. Preintegrated Volume-Rendering}{9}
+\contentsline {subsection}{\numberline {4.8}Non-photorealistic Rendering / abstraktes Rendering }{9}
+\contentsline {subsection}{\numberline {4.9}Parallelit\IeC {\"a}t ausnutzbar}{10}
+\contentsline {section}{\numberline {5}Skalarfeldtopologie}{11}
+\contentsline {subsection}{\numberline {5.1}Definition Skalarfeldtopologie}{11}
+\contentsline {subsection}{\numberline {5.2}Morsetheorie}{11}
+\contentsline {subsection}{\numberline {5.3}Konturbaum}{11}
+\contentsline {section}{\numberline {6}Vektorfelder}{13}
+\contentsline {subsection}{\numberline {6.1}Definition}{13}
+\contentsline {subsection}{\numberline {6.2}Informationen eines Vektors \IeC {\"u}ber Jacobi-Matrix gewinnen}{13}
+\contentsline {subsection}{\numberline {6.3}Kurven im Vektorfeld}{13}
+\contentsline {subsection}{\numberline {6.4}Fluss, Quellst\IeC {\"a}rke, Divergenz, ...}{14}
+\contentsline {section}{\numberline {7}Merkmalskurven}{15}
+\contentsline {section}{\numberline {8}Texturbasierte Techniken}{16}
+\contentsline {section}{\numberline {9}Vektorfeld-Topologie}{17}
+\contentsline {section}{\numberline {10}Merkmalsbestimmung und Wirbelextraktion}{18}
+\contentsline {section}{\numberline {11}FRAGEN}{19}

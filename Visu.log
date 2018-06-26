@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.19)  21 JUN 2018 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.19)  26 JUN 2018 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,181 +385,192 @@ LaTeX Warning: No \author given.
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-Overfull \hbox (5.12083pt too wide) in paragraph at lines 22--22
+(./Visu.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+
+Overfull \hbox (7.44507pt too wide) in paragraph at lines 4--4
+ [][] []\OT1/cmr/m/n/10 Interpolation generell - Alles im Zwis-chen-raum vi-su-
+al-isieren k^^?onnen 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+ []  
+ []
+
+[2])
+\tf@toc=\write3
+\openout3 = `Visu.toc'.
+
+ [3]
+Overfull \hbox (5.12083pt too wide) in paragraph at lines 25--25
 []\OT1/cmr/bx/n/12 Eigenschaften von Daten und Datens^^?atzen - Was bilden
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 29.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 28.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 28.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 129--133
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--144
-
- []
-
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 132--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--147
+
+ []
+
+[6] [7]
 Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Overfull \hbox (10.44502pt too wide) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Overfull \hbox (10.44502pt too wide) in paragraph at lines 186--188
 \OT1/cmr/m/n/10 - Men-sch schlechte Tiefen-wahrnehmung, auf Wahrnehmen von Obef
 l^^?achen trainiert
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-[7]
-Overfull \hbox (1.47281pt too wide) in paragraph at lines 195--204
+[8]
+Overfull \hbox (1.47281pt too wide) in paragraph at lines 198--207
 \OT1/cmr/m/n/10 - Ab-tas-tung mit Zu-fall-swerten - Ver-schieben der regul^^?ar
 en Ab-tast-punkte zuf^^?allig. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--204
+Underfull \hbox (badness 10000) in paragraph at lines 198--207
 
  []
 
 
-Overfull \hbox (3.48619pt too wide) in paragraph at lines 207--207
+Overfull \hbox (3.48619pt too wide) in paragraph at lines 210--210
 []\OT1/cmr/bx/n/12 Pr^^?a- vs. Post-Klassifikation vs. Prein-te-grated Volume-
  []
 
 
-Overfull \hbox (37.61177pt too wide) in paragraph at lines 208--211
+Overfull \hbox (37.61177pt too wide) in paragraph at lines 211--214
 \OT1/cmr/m/n/10 Preintegrated Col-or-ing = In-te-gral zwis-chen Ab-tast-punk-te
 n spe-ich-ern = Ber^^?ucksichtigung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
+Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
@@ -573,62 +584,153 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 236--238
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--254
+Underfull \hbox (badness 10000) in paragraph at lines 250--257
 
  []
 
 
-Overfull \hbox (5.37556pt too wide) in paragraph at lines 258--259
+Overfull \hbox (5.37556pt too wide) in paragraph at lines 261--262
 []\OT1/cmr/m/n/10 Anwendung auf re-al-is-tis-che BSP: Grade Fl^^?ache w^^?urde 
 ^^?uberall kri-tis-che Punkte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--264
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
+Underfull \hbox (badness 10000) in paragraph at lines 272--276
 
  []
 
-[10] [11] [12] [13] [14] [15]
-Overfull \hbox (0.84628pt too wide) in paragraph at lines 294--294
+[11] [12]
+Overfull \hbox (6.97644pt too wide) in paragraph at lines 288--288
+[]\OT1/cmr/bx/n/12 Informationen eines Vek-tors ^^?uber Jacobi-Matrix gewin-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+
+Overfull \hbox (7.58397pt too wide) in paragraph at lines 292--294
+\OT1/cmr/m/n/10 Im Di-a-gramm h^^?atte man beispiel-sweise ne Kurve in einem 2D
+-Koordinatensystem.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--318
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
+
+ []
+
+[14] [15] [16] [17]
+Overfull \hbox (0.84628pt too wide) in paragraph at lines 348--348
 []\OT1/cmr/bx/n/14.4 Merkmalsbestimmung und Wirbelex-trak-tion 
  []
 
-[16] [17] (./Visu.aux)
+[18] [19] (./Visu.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.88pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 846 strings out of 492995
- 10157 string characters out of 6132703
- 66420 words of memory out of 5000000
+ 849 strings out of 492995
+ 10179 string characters out of 6132703
+ 68420 words of memory out of 5000000
  4451 multiletter control sequences out of 15000+600000
  8501 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -640,10 +742,10 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on Visu.pdf (17 pages, 108024 bytes).
+Output written on Visu.pdf (19 pages, 116348 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -10,6 +10,9 @@
 \begin{document}
 \maketitle	
 \pagebreak
+
+\tableofcontents
+
 \section{Aufgaben der Visualisierung}
 Begriffsdefinition: Drei Zitate zu Visualisierung\\
 Aufgaben der Visualisierung Zusammenfassung\\
@@ -272,6 +275,60 @@ Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte l
 - Spilt-tree und join-tree\\
 
 
+\pagebreak
+\section{Vektorfelder}
+\subsection{Definition}
+Jedem Vektor des Definitionsbereiches/der Domaine ist ein Vektor zugeordnet.
+
+\begin{itemize}[noitemsep]
+	\item Zeitunabhängig = Stationär	
+	\item Zeitabhängig
+\end{itemize}
+
+\subsection{Informationen eines Vektors über Jacobi-Matrix gewinnen}
+Leitet man ein Vektorfeld ab (totales Differential) erhält man die Jacobi-Matrix. Diese beschreibt also die Änderung des Vektors in alle Richtungen.\\
+
+\subsection{Kurven im Vektorfeld}
+Kurve = Position, die sich über die Zeit ändert.\\
+Im Diagramm hätte man beispielsweise ne Kurve in einem 2D-Koordinatensystem. Die Kurve hat nen Start- und nen Zielpunkt. Die Kurve verbindet auf c1-stetige weise diese Punkte. Das ist die Theorie.\\
+
+\noindent In der Praxis fährt zB. ein Auto auf einer 2D-Landschaft. Dann besteht die Kurve aus diskreten, zeitabhängigen Positionspunkten. Dort wo man schneller gefahren ist gibt es weniger Abtastpunkte (liegen die Punkte weiter auseinander). \\
+
+\noindent  $\rightarrow$ Kurvenintegral 1. Art\\ 
+Dabei ist F ein Skalarfeld. Setzt man das auf 1 liefert das Kurvenintegral 1. Art die Weglänge. 
+Dabei liefert die Ableitung der Kurve nach der Zeit die Richtung der Änderung in einem Punkt, wobei die Länge des Vektors der Geschwindigkeit entspricht.\\
+
+\noindent  $\rightarrow$ Kurvenintegral 2. Art\\ 
+Wir haben hier ein Vektorfeld v. Das Vektorfeld kann man sich als Krafteinwirkung vorstellen, die auf das Teilchen, das die Kurve malt, Kraft auswirkt (An dem Teil Arbeit verrichtet). Kurvenintegral 2. Art summiert jetzt die verrichtete Arbeit.\\
+
+\noindent Bildet man das Ringintegral (Integral für geschlossene Kurve, dann nennt man den Wert Zirkulation) in einem Vektorfeld, in zB. dem alle Vektoren parallel zur X-achse liegen und nach Rechts zeigen, ist der Wert des Integrals 0.\\
+Mit dem Fahhrad im Kreis fahren wenn Wind stets von Osten kommt, dann ist in die eine Richtung zu treten, in die andere nicht. Wenn der Wind orthogonal zum Fahrrad steht hat das keine Vektorfeld keine Einwirkung.\\
+
+Tornado vs. Windkanal.\\
+
+\noindent Wenn wir bei nem Ringintegral nicht den Wert 0 erhalten (Die Zirkulation ungleich 0 ist), dann liegt ein Wirbel vor.
+
+
+\noindent  Wir können von nem Ringintegral Teilbereiche Berechnen (Abkürzungen beim im Kreis fahren nehmen). In Summe ergibt das wieder den vollen Kreis.\\
+ 
+\noindent  Wenn wir nen Ring nehmen und darüber die Zirkulation berechen, dann den Ring immer kleiner machen, dann erhalten wir die Berechnung des Rotationswertes für einen Punkt.\\
+ 
+\noindent  Für ein Objekt im 2D-Raum können wir über unendlich vielen Vierecken das Objekt abbilden. Darüber erhalten wir dann das Ringintegral und damit die Zirkulation von dem Objekt.\\
+ Über den Satz von Stokes erhaten wir damit auch die Rotation (im Inneren) des Objektes. (Über das Verhalten am Rand, bekommen wir die Info über das Verhalten im Inneren des Objektes).\\
+
+
+\subsection{Fluss, Quellstärke, Divergenz, ...}
+
+Fluss eines Vektorfeldes gibt die Stärke des Durchflusses durch eine in das Vektorfeld hineingelegte Hyperebene an.\\
+
+\noindent Quellstärke für ein definiertes Volumen in einem Vektorfeld: Ist also die Anzahl an Teilen, die mehr rausgehen als reingehen.\\
+
+\noindent Divergenz	= Quellstärke eines infinitesimalen Quaders.\\
+
+\noindent Durch Satz von Gauß kann man Volumenintegrale durch Flächenintegrale ersetzen.\\
+
+\noindent Divergenzfrei (Divergenz = für infintesimale Einheiten) = Quellenfrei (Begriff für Volumen)\\
+\noindent Rotationsfrei (Für Punkte) = Wirbelfrei (Für Felder) \\
 
 
 
@@ -280,9 +337,6 @@ Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte l
 \section{Merkmalskurven}
 - Stromlinien, Pfadlinien\\
 - Runge Kutte Verfahren
-
-\pagebreak
-\section{Vektorfelder}
 
 \pagebreak
 \section{Texturbasierte Techniken}
@@ -302,7 +356,8 @@ Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte l
 - Regionenwachstum mit Saatpunkt in Schnittvisualiserung - BSP?\\
 - Was versteht man unter Resampling?\\
 - Texturbasiertes Rendering?\\
-- 
+- Bsp. für Kurvenintegral 2. Art\\
+- Skalarpotential?
 
 
 \end{document}
