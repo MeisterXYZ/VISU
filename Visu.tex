@@ -64,8 +64,8 @@ Nominal bis Kontinuierlich
 Infos auf Folie?\\
 Wie man zwischen Werten interpoliert.\\
 
-
 \noindent Shepard Interpolation\\
+$\rightarrow$ Inverse Distanzgewichtung.\\
 
 \noindent Modifizierte Shepard Interpolation\\
 $\rightarrow$ Mit Radius
@@ -92,7 +92,8 @@ Zwischen welchen Werten man interpoliert.\\
 \noindent \textbf{Im linearen Prisma}\\
 
 \noindent \textbf{Neares Neighbour in Voroni-Diagrammen für Scattered Data}\\
-
+$\rightarrow$ Entspricht Shepard Interpolation mit Gewichtungsfaktor für Distanz p gegen Unendlich.
+	
 \subsection{Gitter - den gesamten Raum visualisieren können}
 \noindent \textbf{Was ist ein Gitter?}\\
 - Bisher Set an Interpolations-Möglichkeiten\\
@@ -103,6 +104,10 @@ Zwischen welchen Werten man interpoliert.\\
 \noindent \textbf{Wie speichert man die Dinger?}\\
 - Feste X und Y Delta\\
 - Suchstrukturen nennen können. (R-Baum, weitere..)
+-- kD-Baum (k-Dimensionaler Baum) - bsp:\\
+--- BSP = binary space partitioning Tree
+--- Für 2D:  State of the art: Quad-Trees (Ich lege ein gitter drüber, teile das Bild in 4 Teile. So lange bis ich das auf Pixel-Größe habe )
+--- Für 3D: Oct-Trees
 \pagebreak
 
 \section{Skalare und Skalarfelder}
@@ -335,18 +340,136 @@ Fluss eines Vektorfeldes gibt die Stärke des Durchflusses durch eine in das Vek
 
 \pagebreak
 \section{Merkmalskurven}
-- Stromlinien, Pfadlinien\\
-- Runge Kutte Verfahren
+\subsection{Die vier Merkmalskurven instationärer VF}
+In Instationären Vektorfeldern gibt es vier Arten von Merkmalskurven:
+
+\begin{itemize}[noitemsep]
+	\item \textbf{Stromlinien} - Momentaufnahme meines instationären Vetorfeldes.\\
+	\item \textbf{Pfadlinien} -  Trajektorie eines masselosen Partikels: Ich lasse ein Teil irgendwo im Raum los und überlasse es dem Vektorfeld, der Weg der vom Teilchen genommen wird ist die Pfadlinie.\\
+	Berechnung über\\
+	- Eulerverfahren - Einschrittverfahren\\
+	- Modifiziertes Eulerverfahren (1/2 schritt in die Richtung, dann Vektorfeld an der Position abtasten und daraus nächste Richtung bestimmen)\\
+	- Runge-Kutta Verfahren der vierten Ordnung\\
+	\item \textbf{Streichlinien} - \\
+	wir verfolgen eine Position und werfen dort über die Zeit mehrere Partikel rein.\\
+	Hat sich das Feld geändert, nehmen die Teilchen verschiedene Pfade.	(Das ist nicht die Pfadlinie.)\\
+	Bsp: Schornstein. Rauch-Wolken-Teil ganz oben ist mit Sicherheit nicht die Linie gegangen, die die gebogene Rauchsäule unten drunter bildet.\\
+	
+	\item \textbf{Zeitlinien} - Verfolgung einer zusammenhängenden Linie an Tracern über die Zeit.
+\end{itemize}
+
+
+\subsection{Übung Pfadlinien/ Partikel-Trajektion}
+- Euler, mod Euler, RK4 üben.\\
+
+\subsection{Terminierung}
+Wann hören wir auf, Linien zu zeichnen?\\
+
+\subsection{Anzeigen der Linien}
+\textbf{Streamtubes}\\
+- Röhrendicke und Farbe verwenden, um Atribute abzubilden.\\
+-- Druck\\
+-- Geschwindigkeit (hätten wir bei einzelnen Linien nicht) (dünner wenn schneller $\rightarrow$ darf aber nicht zu dünn werden, wenn es dann nicht mehr da ist die Linie)\\
+-- Zeit\\
+
+\noindent \textbf{Streamribbons}\\
+- Drehung des Partikels um sich selbst lässt sich durch Drehung eines solchen Bandes darstellen\\
+- mehrere Bänder können auch einen gemeinsamen Wirbel ergeben\\
+- Größen und Farbkodierung analog zu Röhren\\
+
+\noindent \textbf{Stromlinien-Platzierung}\\
+- Man braucht ein paar Stromlinien, um den Datensatz zu verstehen. Aber: keine Überschneidungen, keine Häufungen\\
+Es gibt Bereiche, in denen Stromlinien zusammenlaufen. Da will man nicht alle Stromlinien zeichnen.\\
+Erste Möglichkeit das anzugehen:
+Das ist heftig:  Räumliche Suchstuktur bauen, um zu checken, ob sich Linien zu nahe kommen um ggf. Zeichnen von Linien abzubrechen.
+
+\noindent Noch ein Ansatz:
+Starten auf schwarzer Fläche. Stromlinie einzeichnen. Dann verwischen. Bspw. mit Gauß Glockenkurve. Dann nächste Linie zeichnen, dort wo es noch ziemlich dunkel ist. Dann immer weiter, bis ein ziemlich graues Bild entsteht.\\
+- Bild mit Schwarzen/weißen Flächen nicht so gut.\\
+- Wie gut ne Linie war würde sich zeigen, ob sich die Varianz  des gesamten Bildes verbessert hat.
+Meiste Verfahren sind Brute-Force-Verfahren: haufenweise Linien berechnen und prüfen, ob es besser wird.
 
 \pagebreak
 \section{Texturbasierte Techniken}
+\subsection{Schlieren als Motivation}
+Idee: Strömung sichtbar machen.\\
+Messtechnik für 2D oder 3D-Strömungen = Schlierenbilder.\\
+
+\noindent Oberfläche des Objektes mit Ölfilm benetzen, dann bilden sich nach Strömung Streifen auf dem Ölfilm.\\
+Oder Dichte von Teilchen im Windkanal betrachten.\\
+
+\noindent Aufbau Spiegelvorrichtung für Messen von Schlieren = Strioscopie TODO
+
+\subsection{Spot Noise}
+Methode Strömungsdaten darzustellen.\\
+Spot = Farbklecks.\\
+Man wählt zufällig Positionen in der Textur und zeichnet einen Spot an dieser Stelle, der so geformt ist, dass er die Richtung des Vektorfeldes wiedergibt. In Kombination mit Farbabbildungen z.B. des Drucks ergeben sich dann Bilder, die Linienmuster entlang von Stromlinien bilden.\\
+
+\noindent In 3D auch möglich, da allerdings Verdeckungsproblem, daher Verteilung von Spots von anderen Parametern abhängig gemacht.\\
+
+\subsection{DDC}
+
+\noindent Discrete Differential Analyzer-Faltungsverfahren:\\
+Hier wird eine Linie in Richtung des Vektorfeldes gerastert und über diese gemittelt.\\
+Problem: bei Starker Krümmung einer Linie verwischte Darstellung. \\
+
+
+\subsection{LIC}
+Zum Überwinden des Problemes in DDC LIC verwenden.\\
+= Line Integral Convolution oder LinienIntegral-Faltung.\\
+= Auto in Windkanal stellen, Ölfilm drauf, Windkanal an, Windkanal aus, Ölfilm auf Oberfläche anschauen. Wenn du das als Algorithmus umsetzt, hast dus. 
+
+\noindent \textbf{LIC}\\
+
+\noindent \textbf{Fast LIC}\\
+
+\noindent \textbf{LIC auf Volumen}
 
 \pagebreak
 \section{Vektorfeld-Topologie}
 
+\subsection{Das Ziel}
+Untersucht die Frage nach Gesamtbild des Flusses. Also Anfang und Ende von Stromlinien ansehen. Dadurch Bereiche ähnlichen Stromlinienverhaltens identifizieren. Das ist das Ziel.\\
+
+\subsection{Startmenge, Zielmenge, Becken, Topologie}
+\noindent \textbf{Startmenge}\\
+Für jeden Punkt des Beobachtungsraumes Stromlinie zurückverfolgen. Die Punkte, deren Stromlinienposition am nächsten an minus unendlich dran sind, bilden die Startmenge.\\
+Warum so kompliziert? - Wegen Kreis-Problem.\\
+
+\noindent \textbf{Zielmenge}\\
+= Startmenge Rückwerts.\\
+
+\noindent \textbf{Becken}\\
+Becken eines Punktes = Alle Punkte des Definitionsbereiches, die auf den Linien liegen, die vom gegebenen Punkt ausgehen.\\ 
+Man kann auch ein Becken für mehrere Punkte definieren.\\
+
+\noindent \textbf{Vektorfeldtopoliogie}\\
+Topologie wird definiert als Zerlegung von Beaobachtungsraum B in Komponenten. Diese Komponenten ergeben Sich aus den Schnitten Von Apha- und Omega-Becken. \\
+Eine Komponente besteht aus den Stromlinien, die die gleich Start- und Zielmenge haben.
+
+
+\subsection{Seperatritzen, kritische Punkte}
+\noindent \textbf{Kritische Punkte}\\
+Kritische Punkte = Nullstellen des Vektorfeldes. Start- und Zielmenge besteht aus dem Punkt selbst. Das ist eine sog. Singularität.\\
+Kritische Punkte kann man durch Nachbarschafts-Betrachtung klassifizieren.\\
+
+\noindent \textbf{Seperatritzen}\\
+- Was einen interessiert sind die Teile, die bestimmte Bereiche abtrennen.\\
+- Das sind immer Linien die ein Besonderes Verhalten haben. Nämlich die kritische Punkte verbinden. Solche Linien sind die sog. Seperatritzen.\\
+
+\noindent Quellen, Senken, Sattelpunkte\\
+
+\noindent Vergleich zu Skalarfeldern
+
+\subsection{Weiteres?}
+
 \pagebreak
 \section{Merkmalsbestimmung und Wirbelextraktion}
-
+Hängen bleiben sollte:\\
+- Versch. mathematische Modelle zum Beschreiben der Wirbel\\
+- Ideen hinter den Algorithmen zum finden \\
+- Was ist ein Merkmal, was ist interessant, verfolgen über Zeit\\
+- Verschiedene Ideen dazu das anzuzeigen
 
 \pagebreak
 \section{FRAGEN}

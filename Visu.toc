@@ -31,7 +31,19 @@
 \contentsline {subsection}{\numberline {6.3}Kurven im Vektorfeld}{13}
 \contentsline {subsection}{\numberline {6.4}Fluss, Quellst\IeC {\"a}rke, Divergenz, ...}{14}
 \contentsline {section}{\numberline {7}Merkmalskurven}{15}
-\contentsline {section}{\numberline {8}Texturbasierte Techniken}{16}
-\contentsline {section}{\numberline {9}Vektorfeld-Topologie}{17}
-\contentsline {section}{\numberline {10}Merkmalsbestimmung und Wirbelextraktion}{18}
-\contentsline {section}{\numberline {11}FRAGEN}{19}
+\contentsline {subsection}{\numberline {7.1}Die vier Merkmalskurven instation\IeC {\"a}rer VF}{15}
+\contentsline {subsection}{\numberline {7.2}\IeC {\"U}bung Pfadlinien/ Partikel-Trajektion}{15}
+\contentsline {subsection}{\numberline {7.3}Terminierung}{15}
+\contentsline {subsection}{\numberline {7.4}Anzeigen der Linien}{15}
+\contentsline {section}{\numberline {8}Texturbasierte Techniken}{17}
+\contentsline {subsection}{\numberline {8.1}Schlieren als Motivation}{17}
+\contentsline {subsection}{\numberline {8.2}Spot Noise}{17}
+\contentsline {subsection}{\numberline {8.3}DDC}{17}
+\contentsline {subsection}{\numberline {8.4}LIC}{17}
+\contentsline {section}{\numberline {9}Vektorfeld-Topologie}{18}
+\contentsline {subsection}{\numberline {9.1}Das Ziel}{18}
+\contentsline {subsection}{\numberline {9.2}Startmenge, Zielmenge, Becken, Topologie}{18}
+\contentsline {subsection}{\numberline {9.3}Seperatritzen, kritische Punkte}{18}
+\contentsline {subsection}{\numberline {9.4}Weiteres?}{19}
+\contentsline {section}{\numberline {10}Merkmalsbestimmung und Wirbelextraktion}{20}
+\contentsline {section}{\numberline {11}FRAGEN}{21}
