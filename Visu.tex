@@ -200,10 +200,24 @@ Verfahren Beschreiben\\
 \subsection{Beleuchtung von Oberflächen}
 Notwendig, um 3D sichtbar zu machen.\\
 
-\subsection{Transferfunktionen}
-- Color Maps\\
-- Color, oppacity (Zahn-Bsp. von Durchleuchtung)\\
-- Gradientenberechnung für deutlichere Übergänge -> Baumstamm / Luft vs Blatt vs Luft
+\subsection{Levoys Rendering Pipeline}
+\begin{itemize}
+	\item Datensatz (z.B CT Daten) werden aufbereitet (Korrektur Bewegung Patient, Kontrast)
+	\item Ermittlung des Gradienten (''Normale/Vektor des Voxels in Richtung der gr. Änderung ??'') Dient zu Ermittlung Farbintensität /Beleuchtungsverhalten (Flächenausrichtung) , Zeigt Übergänge auf
+	\item Klassifizierung
+	\begin{itemize}
+		\item Farbintensität aus Gradient $\rightarrow$ festlegen Transferfunktion (bestimmt Farbe von bestimmten Skalarwerten) 
+		\item Lichtundurchlässigkeit (in Datensatz gegeben ??)
+	\end{itemize}
+	\item RayCasting $\rightarrow$ Strahl von Bild in Datensatz werfen $\rightarrow$ Abtastpunkte nehmen $\rightarrow$ Interpolieren $\rightarrow$ Samples als geordnetes Array mit Farb bzw Lichtdurchlässigkeitswert (Opacity und Farbe unabhängig voneinander)
+	\item ALTERNAIV: PreIntegrated Volume Rendering $\rightarrow$ Integrale werden mgl. exakt berechnet
+	\item Compositing $\rightarrow$ Addiert Samplewerte auf (Approximation der Intergrale) $\rightarrow$ Farbwert Pixel 
+\end{itemize}
+
+\subsection{Prä- vs. Post-Klassifikation vs. Preintegrated Volume-Rendering}
+PräKlassifierung: Erst Eckpunkten Farbe zuweise, dann zwischen Farbwerten interpolieren. (Hier Gefahr des Color bleedings)\\
+Postklassifizierung: Erst zwischen Eckpunkten interpolieren, dann in Farbwert übersetzen.\\
+Preintegrated Coloring = Integral zwischen Abtastpunkten speichern = Berücksichtigung aller (interpolierten) Zwischenwerte  (kein Color bleeding) \\
 
 \subsection{Sampling-Methoden: Arten der Strahlenverfolgung}
 - Bei Strahlenverfolgung entlang der Achsen: Levoy: Farbwert von Voxel am Ende des Voxels = Farbwert zu beginn des voxels + Farvbe des Vooxels + Oppacität des Voxels
@@ -217,11 +231,6 @@ Generell paar Parameter:
 - Abtastung mit Zufallswerten - Verschieben der regulären Abtastpunkte zufällig.\\
 
 Wie gehe ich mit den erhaltenen Punkten um?:
-
-\subsection{Prä- vs. Post-Klassifikation vs. Preintegrated Volume-Rendering}
-PräKlassifierung: Erst Eckpunkten Farbe zuweise, dann zwischen Farbwerten interpolieren. (Hier Gefahr des Color bleedings)\\
-Postklassifizierung: Erst zwischen Eckpunkten interpolieren, dann in Farbwert übersetzen.\\
-Preintegrated Coloring = Integral zwischen Abtastpunkten speichern = Berücksichtigung aller (interpolierten) Zwischenwerte  (kein Color bleeding) \\
 
 
 \subsection{Non-photorealistic Rendering / abstraktes Rendering }
