@@ -16,40 +16,55 @@
 
 
 \section{Aufgaben der Visualisierung}
-Begriffsdefinition: Drei Zitate zu Visualisierung\\
-Aufgaben der Visualisierung Zusammenfassung\\
-Aufgaben der Visualisierung I - III\\
-Schritte Idealisiertes Vorgehen\\
-Ein Wort zu VTK
+Begriffsdefinition: \\
+- Es geht darum, ein mentales Bild zu erzeugen.\\
+- Es geht nicht um die Zahlen, es geht um die Erkenntnisse.\\
+- Es geht darum Daten in eine Form zu bringen, die die Informationen der Daten korrekt und effizient repräsentiert.\\
+
+\noindent Arbeitsfluss der Visualisierung\\
+Echtwelt-Zeug -- Daten -- Visaulisierung -- Erkenntnis, neues Wissen, Verständnis einfließen Neu Visualisieren usw. -- Kommunikation\\
+
+\noindent Aufgaben der Visualisierung\\
+- Externe Kognition\\
+- Kommunikation\\
+- Darstellung abstrakter Sachverhalte\\
+- Exploration durch beleuchten verschiedener Aspekte\\
+- Relevante Infos schnell erfassen\\
+
 \pagebreak
 
 \section{Datenformate und Gittermodelle}
 \subsection{Eigenschaften von Daten und Datensätzen - Was bilden wir ab?} 
-\textbf{Aufbau Datensatz}\\
 
+\textbf{Aufbau Datensatz}
 \begin{itemize}[noitemsep]
 	\item Definitionsmenge
 	\item Topologie
-	\item Funktion $Definitionsmenge \rightarrow Bildmenge$ wobei Bildmenge Attributen der Daten gleichen muss.
+	\item Funktion $Definitionsmenge \rightarrow Bildmenge$ wobei Bildmenge = Attribute der Daten
 \end{itemize}
-
 
 \noindent \textbf{5 Kriterien nach denen man Datensätze unterscheidet:}
 \begin{itemize}[noitemsep]
 	\item Dimension des Beobachtungsraumes
-	\item Struktur der Definitionsmenge
-	\item Struktur der Nachbarschaftsrelation
-	\item Dimension der Nachbarschaftsrelation
-	\item Wertebereiche der Funktionen
+	\item Struktur der Definitionsmenge (strukturiert, unstrukturiert?)
+	\item Struktur der Nachbarschaftsrelation (leer? Scattered Data? strukturiert? unstrukturiert?
+	\item Dimension der Nachbarschaftsrelation (Dimension der Zellen)
+	\item Wertebereiche der Funktionen (Skalare, Vektoren, Farben, ...)
 \end{itemize}
 
 \noindent Typen von Daten:
 \begin{itemize}[noitemsep]
-	\item ....
+	\item Kategorisch (Dateiformate, Farben, Geschlecht)
+	\item geordnet
+	\subitem - ordinal vs. quantitativ
+	\subitem - sequentiell vs. divergierend
 \end{itemize}
-Nominal bis Kontinuierlich
+
+\noindent Typen von Skalar-Werten:
 \begin{itemize}[noitemsep]
-	\item ....
+	\item Nominale Werte 
+	\item Ordinale/Diskrete Werte
+	\item Kontinuierliche Werte
 \end{itemize}
 
 \noindent \textbf{Anforderungen ans Visualisierungssystem}
@@ -60,10 +75,25 @@ Nominal bis Kontinuierlich
 	\item Einfachheit (?)
 \end{itemize}
 
-\noindent \textbf{Begriffsdefinitionen}\\
+\noindent \textbf{Begriffsdefinitionen}
 \begin{itemize}[noitemsep]
-	\item Stetigkeit (Kurz in Umgangssprache aufschreiben)
-	\item Topolgie, Kodimension...
+	\item Stetigkeit (Kurz in Umgangssprache aufschreiben)\\
+	Funktion stetig, wenn Epsilon-Delta Kriterium an jeder Stelle des Definitionsbereiches erfüllt ist\\
+	Funktion k-Stetig, wenn Funktion und alle ihre Ableitungen bis k-ter Ordnung stetig 
+	\item Geometrische Dimension (=3D Position auf Kugel im Raum)
+	\item Topologische Dimension (=2D-Position auf Kugel-Fläche) 	
+	\item Kodimension (=Differenz zwischen Topologischer und Geometrischer Dimanesion)
+\end{itemize}
+
+\noindent \textbf{Speicherung strukturiert vs. unstrukturierte Daten}
+\begin{itemize}[noitemsep]
+	\item Strukturiert
+	\subitem inhärente Relation der Daten zueinander
+	\subitem Einfach Berechnung von Punktposition
+	\subitem Schnelles suchen von Punkten
+	\item Unstrukturiert
+	\subitem Keine einfache Möglichkeit die Lage der Punkte zueinander zu berechnen
+	\subitem Lage der Punkte ist also explizit gegeben.
 \end{itemize}
 
 \noindent \textbf{Das Problem, dass alles was gemessen wird, diskrete Werte sind}\\
@@ -75,6 +105,9 @@ $\rightarrow$ Inverse Distanzgewichtung.\\
 
 \noindent Modifizierte Shepard Interpolation\\
 $\rightarrow$ Mit Radius
+
+\noindent Ein Wort zu VTK
+
 
 \subsection{Interpolation generell - Alles im Zwischenraum visualisieren können }
 Zwischen welchen Werten man interpoliert.\\
@@ -106,21 +139,30 @@ $\rightarrow$ Entspricht Shepard Interpolation mit Gewichtungsfaktor für Distan
 - Jetzt ganzen Raum mit Gitter auskleiden - befähigt uns jeden Punkt im Raum abzubilden.\\
 
 \noindent \textbf{Welche Gitter gibt es?}\\
+- Strukturiert:\\
+--- Regelmäßig (Alle Zellen gleich)\\
+--- rechtwinklig (hier stehen die Koordinatenachsen senkrecht aufeinander, jedoch sind die Punktabstände entlang der Koordinatenachsen unterschiedlich.)\\
+- Unstrukturiert\\
 
 \noindent \textbf{Wie speichert man die Dinger?}\\
-- Feste X und Y Delta\\
-- Suchstrukturen nennen können. (R-Baum, weitere..)
--- kD-Baum (k-Dimensionaler Baum) - bsp:\\
---- BSP = binary space partitioning Tree
---- Für 2D:  State of the art: Quad-Trees (Ich lege ein gitter drüber, teile das Bild in 4 Teile. So lange bis ich das auf Pixel-Größe habe )
---- Für 3D: Oct-Trees
+Feste X und Y Delta\\
+
+\noindent Suchstrukturen nennen können:\\
+\begin{itemize}[noitemsep]
+	\item Für 2D:  Quad-Trees \\Ich lege ein gitter drüber, teile das Bild in 4 Teile. So lange bis ich das auf Pixel-Größe habe: LO, RO, LU RU
+	\item Für 3D: Oct-Trees
+	\item BSP = binary space partitioning Tree\\ In 2 Teile partitionieren, immer da wo Mitte ist. Hier nicht zwingen Wechsel zischen entlang x-und y-Achse teilen.
+	\item kD-Baum\\ Gleich BSP, hier aber zwingen Wechsel zischen entlang x-und y-Achse teilen.
+	\item State of the art: Cell Trees \\Speichert die Zellen ab, Für Intervallsuche in Zellen.
+\end{itemize}
+
 \pagebreak
 
 \section{Skalare und Skalarfelder}
 
 \subsection{Definifion Feld und Skalarfeld}
-Feld: ...\\
-Skalarfeld...
+Feld in Physik = räumliche Verteilung einer physikalische  Größe\\
+Skalarfeld = Eine Funktion, die einen D-dimensionalen Definitionsbereich hernimmt und jedem Punkt des Definitionsbereiches einen skalaren Wert zuordnet. 
 
 \subsection{Darstellungsformen von 2D-Definitionsmenge}
 \begin{itemize}[noitemsep]
@@ -137,8 +179,20 @@ Skalarfeld...
 \end{itemize}
 
 \subsection{Color-Maps}
-Aspekte raussuchen.
+Abbildung Skalar als Farbe. Also Abbildungsfunktion $Skalar \rightarrow Einheitsintervall$ und $Einheitsintervall \rightarrow Farbskala$ notwendig.\\
+Farbabbildung oft diskretisiert angegeben. zB. als Tabelle mit 256 Einträgen\\
 
+\noindent Bei Auswahl der Farben zu beachten:\\
+- Konventionen: Bsp. Wetterkarte: Kalte und Warme Farben trennen (Blau/Rot)\\
+- Reihenfolge der Farben muss für den Menschen Sinn ergeben\\
+- Rot/Grün-Schwäche: 7\% der Männer, 2\% der Frauen\\
+- Kulturelle Aspekte: Weiß in anderen Kulturen Farbe der Trauer, schlecht geeignet für ''denen geht's gut''\\
+- diskrete Übergänge kann man auch Nutzen um Grenzüberschreitungen deutlicher zu machen: Übergänge explizit hervorheben: okay, hier wird es kälter\\
+- Regenbogen-Skala: Wer hat mal eben die Farbreihenfolge des Regebnogens im Kopf?\\
+- Balken-Effekt: Nehmen bspw. in einer Regenbogenskala den gelben balken kleiner wahr als den grünen. Das kann man re-skalieren, man kann sich dabei aber auch schön verspielen.\\
+
+\noindent - Farbton zur Darstellung von Größen ungeeignet\\
+- Luminanz (bei schnell variierenden Daten) und Sättigung (für Ausdehnung) dafür gut geeignet 
 \subsection{Isolinien und Flächen}
 - Was sind das?\\
 - Interpolation von Isowert in Dreiecks-Flächen (Wo schneidet ein Dreieck die 0-Höhenlinie?)\\
@@ -149,11 +203,12 @@ Aspekte raussuchen.
 - Prinzip\\
 - Bug im Verfahren (Bei Verbindung über mehrere Zellen)\\
 - Korrekte Triangulierung\\ 
-- Konsistente Triangulierung -> Über Festlegung: Bei Sattelpunkt: Liegt immer nach Links - ist Konsitenz sichergestellt.
+- Konsistente Triangulierung - Über Festlegung: Bei Sattelpunkt: Liegt immer nach Links - ist Konsitenz sichergestellt.
 
 \subsection{Asymptotic Decider}
-- Bilineare Interoplation (an den Flächen entlang?\\
-- Fallunterscheidung: Wert von Interpoliertem Kanten-Schnittpunkt vergleichen mit Sattelpunkt-Wert.
+- Wie bei MC bilineare Interoplation (an den Flächen der Würfel entlang)\\
+- Fallunterscheidung: Wert von Interpoliertem Kanten-Schnittpunkt vergleichen mit Sattelpunkt-Wert.\\
+- Über rechnerisches Ermitteln von Position Sattelpunkt herstellen von Konsistenz
 - Probleme: Korrketheit der Triangulierung -> Analog zu Marching Cubes, allerdings ist schon Konsitenz sichergestellt - Korrektheit bleibt offen.\\
 
 \pagebreak
@@ -167,7 +222,9 @@ Aus Kap 2:
 
 
 \subsection{Welche 3D-Volumen-Daten gibt es zu visualisieren?}
-
+- CT: Schichten durchleuchten und rückrechnen\\
+- 3D-Ultraschall\\
+- MRT: Bild besteht aus mehreren Schichten
 
 \subsection{Schnittflächen}
 - Ebne = Position und Normalenvektor\\
@@ -182,23 +239,14 @@ Aus Kap 2:
 
 
 \subsection{Durchleuchtung}
-Verfahren Beschreiben\\
-- ...\\
-- Dabei maßgebend Houndsfield-Skala\\
+\noindent Absorptionsmodell:\\
+Gleicht künstlicher Berechnung von Röntgenbild aus CT-Daten\\
+- Dabei maßgebend Houndsfield-Skala = Dichte bezüglich Röntgenstrahlung\\
 
 \noindent Emissionsmodell\\
-
-\noindent Absorptionsmodell\\
+- MRT?\\
 
 \noindent Kombination beider Modelle\\
-
-\noindent Absorptionsmodell\\
-
-\noindent Darstellung des resultierenden Skalarfeldes\\
-- Mensch schlechte Tiefenwahrnehmung, auf Wahrnehmen von Obeflächen trainiert $^\rightarrow$ deswegen Einsatz Transferfunktion
-
-\subsection{Beleuchtung von Oberflächen}
-Notwendig, um 3D sichtbar zu machen.\\
 
 \subsection{Levoys Rendering Pipeline}
 \begin{itemize}
@@ -207,17 +255,24 @@ Notwendig, um 3D sichtbar zu machen.\\
 	\item Klassifizierung
 	\begin{itemize}
 		\item Farbintensität aus Gradient $\rightarrow$ festlegen Transferfunktion (bestimmt Farbe von bestimmten Skalarwerten) 
-		\item Lichtundurchlässigkeit (in Datensatz gegeben ??)
+		\item Lichtundurchlässigkeit (implizit in den Skalarwerten des Datensatzes)
 	\end{itemize}
 	\item RayCasting $\rightarrow$ Strahl von Bild in Datensatz werfen $\rightarrow$ Abtastpunkte nehmen $\rightarrow$ Interpolieren $\rightarrow$ Samples als geordnetes Array mit Farb bzw Lichtdurchlässigkeitswert (Opacity und Farbe unabhängig voneinander)
 	\item ALTERNAIV: PreIntegrated Volume Rendering $\rightarrow$ Integrale werden mgl. exakt berechnet
 	\item Compositing $\rightarrow$ Addiert Samplewerte auf (Approximation der Intergrale) $\rightarrow$ Farbwert Pixel 
 \end{itemize}
 
+\noindent Darstellung des resultierenden Skalarfeldes
+
+\subsection{Beleuchtung von Oberflächen}
+Notwendig, um 3D sichtbar zu machen.\\
+Mensch schlechte Tiefenwahrnehmung, auf Wahrnehmen von Obeflächen trainiert $^\rightarrow$ deswegen 
+Einsatz von Beleuchtungsmodell in Transferfunktion
+
 \subsection{Prä- vs. Post-Klassifikation vs. Preintegrated Volume-Rendering}
 PräKlassifierung: Erst Eckpunkten Farbe zuweise, dann zwischen Farbwerten interpolieren. (Hier Gefahr des Color bleedings)\\
 Postklassifizierung: Erst zwischen Eckpunkten interpolieren, dann in Farbwert übersetzen.\\
-Preintegrated Coloring = Integral zwischen Abtastpunkten speichern = Berücksichtigung aller (interpolierten) Zwischenwerte  (kein Color bleeding) \\
+Preintegrated Coloring = Sich der vollständigen Berechnung des Integrals zwischen zwei Abtastpunkten annähern durch Vorberechnung von interpolierten Werten in 256x256-Tabelle zum Beispiel. Also nahezu Berücksichtigung aller (interpolierten) Zwischenwerte  (kein Color bleeding) \\
 
 \subsection{Sampling-Methoden: Arten der Strahlenverfolgung}
 - Bei Strahlenverfolgung entlang der Achsen: Levoy: Farbwert von Voxel am Ende des Voxels = Farbwert zu beginn des voxels + Farvbe des Vooxels + Oppacität des Voxels
@@ -226,11 +281,10 @@ Generell paar Parameter:
 - Abtastrate  (Größe des Gitters)\\
 --Richtlinie\\
 --Theorem aus Signalverarbeitung\\
-- Sampling entlang Objekt (Transfpormatio der Strahlen) oder Sampling einfach grade durch\\
+- Sampling entlang Objekt (Transformation der Strahlen) oder Sampling einfach grade durch\\
 - Bessere Daten durch Vorverarbeitung\\
 - Abtastung mit Zufallswerten - Verschieben der regulären Abtastpunkte zufällig.\\
 
-Wie gehe ich mit den erhaltenen Punkten um?:
 
 
 \subsection{Non-photorealistic Rendering / abstraktes Rendering }
@@ -256,18 +310,22 @@ Aufteilung der Daten via kd-Baum (k-Dimensionaler Baum) - halbieren, halbieren .
 \section{Skalarfeldtopologie}
 
 \subsection{Definition Skalarfeldtopologie}
-- Rubber-Band Geometry\\
-- Homöomorphismus \\
+- Topologie = betrachtet Eigenschaften mathematischer Strukturen, die sich unter stetiger Verformung nicht ändern.\\
+- Skalarfeldtopologie = betrachtet Eigenschaften der Skalare (Beziehungen zueinander) die sich unter stetiger Verformung des Topologischen Raumes (Punkte der Definitionsmenge) nicht ändern.\\
+= Rubber-Band Geometry\\
+Stetige bijektive Verformung = Homöomorphismus\\
 
 
-- Simplex = Einfache wir Punkt, Limnie Dreieck\\
+\noindent - Simplex = Einfache wir Punkt, Linie Dreieck\\
 - Simplizialkomplex = Komplexe Struktur aufgebaut aus Sinmplexen\\
-- Triangulierung von nem topologischen Raum X ist ein Simplizialkomplex k zusammen mit nem Homöomirphismus k nach x (wir müssen sagen: Wo gehören die Dreicke hin? Homöomorphismus lässt uns die triangulierten Werde in den zugrundeliegenden echten Raum transformieren.)
+- Triangulierung von nem topologischen Raum X ist ein Simplizialkomplex k zusammen mit nem Homöomorphismus k nach x (wir müssen sagen: Wo gehören die Dreicke hin? Homöomorphismus lässt uns die triangulierten Werte in den zugrundeliegenden echten Raum transformieren.) Gibt es eine Kombination aus Simplizailkomplex und Homöomorphismus, womit man x abbilden kann, heißt x triangulierbar.
+
 
 \subsection{Morsetheorie}
-- Wir haben ne Mannigfaltigkeit (Bspw. Erd-Kugel) darauf haben wir ne differenzierbare Funktion (die Bspw. Höhenfeld darstellt). Mithilfe der Morse-Theorie können wir diese Funktion analytisch untersuchen.
+- Wir haben ne Mannigfaltigkeit (Bspw. Erd-Kugel) darauf haben wir ne differenzierbare Funktion (die Bspw. Höhenfeld darstellt.).\\
+ Mithilfe der Morse-Theorie können wir diese Funktion analytisch untersuchen.\\
 
-Kritische Punkte und kritische Werte:\\
+\noindent Kritische Punkte und kritische Werte:\\
 -- Wenn totale Ableitung gleich 0\\
 -- Partielle Ableitung entsprechend auch\\
 - Kugel rollt nicht weg\\
@@ -276,23 +334,21 @@ Kritische Punkte und kritische Werte:\\
 --Sattel\\
 
 In Hesse-Matrix stehen alle Kombinationen aller partiellen Ableitungen bis 2. Grades drin.
-Für alle kritischen Punkte Hesse-Matrix aufstellen. Darüber Erkenntnis gewinnen, wie es um die Punkte drum rum aussieht (Wo geht's wie starkt hoch und runter?) Daraus können wir die Umgebung aufbauen.
+Für alle kritischen Punkte Hesse-Matrix aufstellen. Darüber Erkenntnis gewinnen, wie es um die Punkte drum rum aussieht (Wo geht's wie starkt hoch und runter?) Daraus können wir die Umgebung aufbauen.\\
 
-Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte liefern, deswegen Dreieck leicht ankippen (kleines Epsilon an Ecken addieren.)
+\noindent Anwendung auf realistische BSP: Grade Fläche würde überall kritische Punkte liefern, deswegen Dreieck leicht ankippen (kleines Epsilon an Ecken addieren.)
 
 \subsection{Konturbaum}
 - Lokales MIN\\
 - Lokales MAX\\
 - Verbindungs und Trennpunkt\\
 
-- Äquivalente Isokonturen = Zwei Linien untereinander (auf verschiedener Höhe) zwischen denen kein MIN, MAX, Trenn/VerbindPunkt liegen.\\
+\noindent - Äquivalente Isokonturen = Zwei Linien untereinander (auf verschiedener Höhe) zwischen denen kein MIN, MAX, Trenn/VerbindPunkt liegen.\\
 
-- Konturbaum Superecke und Superkante.\\
-
-- Vergrößertert Konturbaum (?)\\
+\noindent - Konturbaum Superecke und Superkante.\\
+- Aus Split und Join-Tree\\
 - Höhengraph (mit Werten)\\
 - Teilgrph\\
-- Spilt-tree und join-tree\\
 
 
 \pagebreak
@@ -331,7 +387,7 @@ Tornado vs. Windkanal.\\
 
 \noindent  Wir können von nem Ringintegral Teilbereiche Berechnen (Abkürzungen beim im Kreis fahren nehmen). In Summe ergibt das wieder den vollen Kreis.\\
  
-\noindent  Wenn wir nen Ring nehmen und darüber die Zirkulation berechen, dann den Ring immer kleiner machen, dann erhalten wir die Berechnung des Rotationswertes für einen Punkt.\\
+\noindent  Wenn wir nen Ring nehmen und darüber die Zirkulation berechen, dann den Ring immer kleiner machen, dann erhalten wir die Berechnung des Rotationswertes für einen Punkt. Rotation also Zirkulation auf einem Punkt zusammengeballt. Kann man über die Ableitung des Feldes bestimmen.\\
  
 \noindent  Für ein Objekt im 2D-Raum können wir über unendlich vielen Vierecken das Objekt abbilden. Darüber erhalten wir dann das Ringintegral und damit die Zirkulation von dem Objekt.\\
  Über den Satz von Stokes erhaten wir damit auch die Rotation (im Inneren) des Objektes. (Über das Verhalten am Rand, bekommen wir die Info über das Verhalten im Inneren des Objektes).\\
@@ -480,7 +536,29 @@ Kritische Punkte kann man durch Nachbarschafts-Betrachtung klassifizieren.\\
 
 \pagebreak
 \section{Merkmalsbestimmung und Wirbelextraktion}
-Merkmale (engl. Features) = 
+Merkmale (engl. Features) = Teilenge des Beobachtungsraumes, in der alle Punkte eine Bedingung erfüllen.\\
+Anhand von maximaler Dimension der betrachteten Mannigfaltigkeit unterscheidet man Punkt-, Kurven-, Flächen-, und Regionenmerkmale.\\
+
+\noindent Was  ist ein Wirbel?\\
+Spiralförmige Bewegung der Teilchen um ein Zentrum\\
+Kann Trichterförmige Struktur haben, in der Teilchen nach unten weggehen\\
+Bei Badewanne verlassen die Teilchen am unteren Ende der Achse des Trichtes den Raum\\
+
+\noindent Man muss hierbei beachten: Sinuns-Welle:\\
+Markieren von Punkt an einem Rad an nem Fahrrad -> Punkt geht im Prinzip über die Strecke gesehen nur hoch\\ und Runter (Sinus-Welle) Aber wenn man Achse des Rades betrachtet geht das Ding im Kreis
+
+Kann man wieder auf der Oberfläche betrachten und dann im Volumen \\
+- Wen sich was auf der Oberfläche dreht liegt es nahe, dass auch Wirbel im Volumen bestehen\\
+- Kann aber auch einfach nur im Raum liegen ohne Oberfläche\\
+- Element im Zentrum kann sich drehen, muss aber nicht\\
+
+
+Potentialwirbel:\\
+Rankine Wirbel:\\
+Hamel-Oseen Wirbel:\\
+
+Finden von Wirbeln:
+- Anhand von Eigenschaften (Rotationswert,  ) 
 
 
 Hängen bleiben sollte:\\
